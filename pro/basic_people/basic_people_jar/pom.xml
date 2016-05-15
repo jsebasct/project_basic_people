@@ -12,7 +12,7 @@
   <groupId>org.peoplesoft</groupId>
   <artifactId>basic_people_jar</artifactId>
   <version>1.0</version>
-  <name>basic_people_jar</name>
+  <name>Basic People Jar</name>
 
   <dependencies>
     <dependency>
