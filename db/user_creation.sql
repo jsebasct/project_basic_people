@@ -15,8 +15,8 @@ USE `basic_people` ;
 -- -----------------------------------------------------
 -- User
 -- -----------------------------------------------------
-CREATE USER 'SimplePeople'@'localhost' IDENTIFIED BY 'mypass';
+CREATE USER 'speople'@'localhost' IDENTIFIED BY 'all4one';
 
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
     ON basic_people.*
-    TO 'SimplePeople'@'localhost';
+    TO 'speople'@'localhost';
