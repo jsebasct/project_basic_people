@@ -1,7 +1,8 @@
 package org.peoplesoft.util;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class HibernateUtil {
 
@@ -9,7 +10,11 @@ public class HibernateUtil {
 
 	static {
 		try {
-			sessionFactory = new Configuration().configure().buildSessionFactory();
+			//sessionFactory = new Configuration().configure().buildSessionFactory();
+			sessionFactory = new MetadataSources(
+					new StandardServiceRegistryBuilder()
+					.configure("hibernate.cfg.xml").build()
+					).buildMetadata().buildSessionFactory();
 		} catch (Throwable ex) {
 			throw new ExceptionInInitializerError(ex);
 		}

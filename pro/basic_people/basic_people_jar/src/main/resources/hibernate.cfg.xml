@@ -21,7 +21,7 @@
         
         <!-- entities -->
         <mapping class="org.peoplesoft.model.entities.Person"/>
-        <!-- <mapping class="org.peoplesoft.model.entities.BankAccount"/> -->
+        <mapping class="org.peoplesoft.model.entities.BankAccount"/>
         
     </session-factory>
 </hibernate-configuration>

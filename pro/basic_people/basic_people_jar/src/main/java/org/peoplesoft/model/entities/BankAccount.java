@@ -2,9 +2,12 @@ package org.peoplesoft.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,10 @@ public class BankAccount {
 	
 	@Column(name="bank_name")
 	private String bankName;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="FK_person_id", nullable=false)
+	private Person owner;
 
 	public Long getId() {
 		return id;
@@ -44,5 +51,13 @@ public class BankAccount {
 
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
+	}
+
+	public Person getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Person owner) {
+		this.owner = owner;
 	}
 }
